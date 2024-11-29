@@ -4,6 +4,11 @@ ul {
 }
 ul li {
   margin: 5px 0;
+  font-weight: 500;
+}
+
+p {
+  margin: 0;
 }
 
 body {
@@ -13,9 +18,19 @@ body {
   padding: 0;
 }
 body .container {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+body .container .logo {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+}
+body .container .logo img {
+  width: 325px;
+  height: auto;
 }
 body .container .section {
   margin-bottom: 2rem;
@@ -30,19 +45,18 @@ body .container .section .title {
   font-weight: 700;
   margin: 5px 0;
 }
+body .container .section .link {
+  background-color: #efefef;
+  padding: 16px;
+  width: 475px;
+  display: block;
+}
 body .container .section .section p {
   margin-bottom: 1rem;
 }
-body .container .section .image {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-body .container .section .image {
-  max-width: 100%;
-  height: auto;
-}
 body .container .section img {
   width: 100%;
+  box-shadow: 0px -1px 20px 1px #cdcdcd;
 }
 body .container .section.flex {
   display: flex;
@@ -52,6 +66,68 @@ body .container .section.flex .l_area {
 }
 body .container .section.flex .r_area {
   width: 50%;
+}
+
+.skills_area {
+  gap: 5px;
+}
+.skills_area .skill {
+  padding: 5px 15px;
+  border-radius: 30px;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+.skills_area .skill_title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+.skills_area .skill.spring {
+  background-color: #6DB33F;
+}
+.skills_area .skill.mybatis {
+  background-color: #F66A0A;
+}
+.skills_area .skill.java {
+  background-color: #5382A1;
+}
+.skills_area .skill.vue {
+  background-color: #42B883;
+}
+.skills_area .skill.jquery {
+  background-color: #0769AD;
+}
+.skills_area .skill.mysql {
+  background-color: #4479A1;
+}
+.skills_area .skill.oci {
+  background-color: #F80000;
+}
+.skills_area .skill.docker {
+  background-color: #2496ED;
+}
+.skills_area .skill.nginx {
+  background-color: #009639;
+}
+.skills_area .skill.githubactions {
+  background-color: #24292F;
+}
+.skills_area .skill.scouter {
+  background-color: #5530c1;
+}
+
+.develop_cause {
+  background-color: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+}
+.develop_cause p {
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=home.css.map */

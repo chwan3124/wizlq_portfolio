@@ -4,7 +4,12 @@ ul{
 
   li{
     margin: 5px 0;
+    font-weight: 500;
   }
+}
+
+p{
+  margin: 0;
 }
 
 body {
@@ -14,9 +19,21 @@ body {
   padding: 0;
 
   .container {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 1rem;
+    max-width: 1040px;
+    margin: 0 auto;
+
+    .logo{
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 30px;
+
+      img{
+        width: 325px;
+        height: auto;
+      }
+    }
 
     .section {
       margin-bottom: 2rem;
@@ -33,22 +50,20 @@ body {
         margin: 5px 0;
       }
 
+      .link{
+        background-color: #efefef;
+        padding: 16px;
+        width: 475px;
+        display: block;
+      }
+
       .section p {
         margin-bottom: 1rem;
       }
 
-      .image {
-        text-align: center;
-        margin-bottom: 2rem;
-      }
-
-      .image {
-        max-width: 100%;
-        height: auto;
-      }
-
       img{
         width: 100%;
+        box-shadow: 0px -1px 20px 1px #cdcdcd;
       }
     }
 
@@ -65,4 +80,78 @@ body {
     }
   }
 }
+.skills_area{
+  gap: 5px;
 
+  .skill{
+    padding: 5px 15px;
+    border-radius: 30px;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+
+  .skill_title{
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 5px;
+  }
+
+  .skill.spring{
+    background-color: #6DB33F;
+  }
+
+  .skill.mybatis{
+    background-color: #F66A0A;
+  }
+
+  .skill.java{
+    background-color: #5382A1;
+  }
+
+  .skill.vue{
+    background-color: #42B883;
+  }
+  
+  .skill.jquery{
+    background-color: #0769AD;
+  }
+
+  .skill.mysql{
+    background-color: #4479A1;
+  }
+
+  .skill.oci{
+    background-color: #F80000;
+  }
+
+  .skill.docker{
+    background-color: #2496ED;
+  }
+
+  .skill.nginx{
+    background-color: #009639;
+  }
+
+  .skill.githubactions{
+    background-color: #24292F;
+  }
+  
+  .skill.scouter{
+    background-color: #5530c1;
+  }
+}
+
+.develop_cause{
+  background-color: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+
+  p{
+    font-weight: 500;
+  }
+}
