@@ -78,7 +78,7 @@ p {
   font-weight: 600;
 }
 .section.portfolio .portfolio_img_area .img {
-  background-image: url("/assets/img/wizlq_logo.png");
+  background-image: url("/wizlq_portfolio//assets/img/wizlq_logo.png");
   background-size: 148px;
   background-position: center;
   background-repeat: no-repeat;
@@ -113,7 +113,7 @@ body .container .section.flex .l_area {
   width: 200px;
 }
 body .container .section.flex .profile {
-  background-image: url("/assets/img/profile.png");
+  background-image: url("/wizlq_portfolio/assets/img/profile.png");
   background-size: 174px;
   background-position: -1px -10px;
   width: 172px;
