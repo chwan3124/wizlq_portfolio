@@ -58,6 +58,12 @@ p{
   background-color: #ffd9d9;
 }
 
+
+.introduce_list{
+  margin-left: 20px;
+  white-space: nowrap;
+}
+
 .exp_content_list_title{
   font-size: 20px;
   font-weight: 600;
@@ -148,6 +154,7 @@ body {
       .contact_area{
         display: flex;
         flex-direction: column;
+        white-space: nowrap;
 
         .contact_title{
           font-weight: 700;
@@ -239,6 +246,22 @@ body {
   
   .skill.scouter{
     background-color: #5530c1;
+  }
+
+  .skill.html{
+    background-color: #FF0000;
+  }
+  .skill.css{
+    background-color: #264DE4;
+  }
+  .skill.git{
+    background-color: #F05032;
+  }
+  .skill.jira{
+    background-color: #0052CC;
+  }
+  .skill.confluence{
+    background-color: #172B4D;
   }
 }
 

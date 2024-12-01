@@ -55,6 +55,11 @@ p {
   background-color: #ffd9d9;
 }
 
+.introduce_list {
+  margin-left: 20px;
+  white-space: nowrap;
+}
+
 .exp_content_list_title {
   font-size: 20px;
   font-weight: 600;
@@ -135,6 +140,7 @@ body .container .section.flex .r_area .introduce {
 body .container .section.flex .contact_area {
   display: flex;
   flex-direction: column;
+  white-space: nowrap;
 }
 body .container .section.flex .contact_area .contact_title {
   font-weight: 700;
@@ -205,6 +211,21 @@ body .container .section.flex .contact_area .contact_title {
 }
 .skills_area .skill.scouter {
   background-color: #5530c1;
+}
+.skills_area .skill.html {
+  background-color: #FF0000;
+}
+.skills_area .skill.css {
+  background-color: #264DE4;
+}
+.skills_area .skill.git {
+  background-color: #F05032;
+}
+.skills_area .skill.jira {
+  background-color: #0052CC;
+}
+.skills_area .skill.confluence {
+  background-color: #172B4D;
 }
 
 .develop_cause {
