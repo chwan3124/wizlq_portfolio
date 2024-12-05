@@ -20,6 +20,7 @@
             </div>
             <div class="r_area">
                 <p class="title">서비스 소개</p>
+                <p style="color:grey; font-weight: 700">2023.06 ~ NOW (1인 개발)</p>
                 <ul style="margin-left: 20px;">
                     <li>
                         "WIZLQ"는 다양한 분야의 용어를 <br/>퀴즈 형태로 등록하여 학습할 수 있는 서비스입니다.
@@ -61,7 +62,7 @@
         </div>
 
         <div class="section" style="line-height: 1.5">
-            <div class="develop_cause">
+            <div class="">
                 <p class="title">개발 계기</p>
                 <ul style="margin-left: 20px;">
                     <li>
@@ -82,9 +83,72 @@
                 </ul>
             </div>
         </div>
+
         <div class="section">
             <p class="title" style="margin-bottom: 15px;">Service Architecture</p>
             <img src="assets/img/wizlq_architecture.png"/>
+        </div>
+
+        <div class="section">
+            <p class="title" style="margin-bottom: 15px;">경험</p>
+            <p class="sub_title" style="margin-bottom: 15px;">1. 보안 강화</p>
+            <p class="content" style="margin-bottom: 15px;">
+                WIZLQ 서비스 구축 후 보안 위협 방지를 위해 원격 서버에 다음과 같은 보안 작업을 수행했습니다.
+            </p>
+            <ul style="margin-left: 20px;">
+                <li>
+                    <b>1. 서버 공개키 로그인 방식 적용</b>
+                    <br/>
+                    원격 호스트 공개키 로그인 방식 적용하여 무작위 대입 공격 방지
+                </li>
+                <li>
+                    <b>2. 사용자별 역할 분리 (RBAC)</b>
+                    <br/>
+                    서버에서 사용자 계정을 역할별로 분리해 권한 관리를 세분화
+                    <br/>
+                    <p style="color: #595959;">EX) super 계정, 데이터 백업 관리 계정, ssh 접속 용 일반 사용자 계정</p>
+                </li>
+                <li>
+                    <b>3. Fail2Ban을 활용한 접속 차단</b>
+                    <br/>
+                    반복 접속 시도하는 사용자 일정 시간 IP 자동 차단하여 무차별 대입 공격 대응
+                </li>
+                <li>
+                    <b>4. 서비스별 기본 포트 변경</b>
+                    <br/>
+                    서비스 기본 포트를 변경하여 스캐닝 공격 방지
+                </li>
+                <li>
+                    <b>5. MySQL 사용자별 권한 및 호스트 설정</b>
+                    <br/>
+                    MySQL 접속을 특정 IP로 제한하여 데이터베이스 보안 강화
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <p class="title" style="margin-bottom: 15px;">회고</p>
+            <div class="develop_cause">
+                <p>
+                    처음엔 저를 대상으로 이 서비스를 개발하게 되었습니다.
+                    <br/>
+                    개념 학습의 필요성과 기술적으로도 아쉬운 부분이 있었기에 이 서비스를 개발하면서 제 단점을 보완해보고자 시작하게 되었습니다.
+                    <br/>
+                    <br/>
+                    힘든 점도 많았지만 실무에서 경험해보지 못했던
+                    <br/>
+                    반응형 UI 구현부터 인프라 구축, JWT 인증, Elasticsearch 활용 등 기술적인 부분과
+                    <br/>
+                    사용자들의 피드백을 통해 서비스 사용성을 높이는 방법을 고민하고 적용하면서
+                    <br/>
+                    기술뿐만 아니라 사용자 경험을 고려하는 능력도 기를 수 있었습니다.
+                    <br/>
+                    <br/>
+                    이 프로젝트는 저에게 많은 성장을 가져다준 경험이며
+                    <br/>
+                    앞으로도 이 프로젝트를 기반으로 제 역량을 지속적으로 확장해 나갈 계획입니다.
+                </p>
+            </div>
         </div>
     </div>
 </body>
