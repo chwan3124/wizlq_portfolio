@@ -6,6 +6,7 @@
     <title>WIZLQ 소개</title>
     <link href="assets/css/home.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <link rel="stylesheet" href="assets/css/resume.scss">
 </head>
 <body>
     <div class="container">
@@ -91,9 +92,55 @@
 
         <div class="section">
             <p class="title" style="margin-bottom: 15px;">경험</p>
-            <p class="sub_title" style="margin-bottom: 15px;">1. 보안 강화</p>
+            <p class="sub_title" style="margin-bottom: 15px;">1. 엘라스틱서치 활용한 검색 성능 향상</p>
             <p class="content" style="margin-bottom: 15px;">
-                WIZLQ 서비스 구축 후 보안 위협 방지를 위해 원격 서버에 다음과 같은 보안 작업을 수행했습니다.
+                공공 데이터(약 100만건)를 기반으로 엘라스틱서치를 활용한 테스트로 검색 성능을 최적화한 경험이 있습니다.
+            </p>
+
+            <p class="content" style="margin-bottom: 15px;">
+                테스트 결과 기존 RDBMS 기반 검색 API의 평균 응답 시간 1824ms을 <b>45ms로 단축시켜</b>
+                <br/>
+                약 <b>97%</b>의 성능 향상 결과를 얻었습니다.
+            </p>
+
+            <p class="content" style="margin-bottom: 15px;">
+                현재 데이터 양은 많지 않지만 향후 데이터가 증가할 상황에 대비해 테스트 후 엘라스틱서치를 도입하였으며
+                <br/>
+                이 과정에서 엘라스틱서치의 개념과 동작 원리를 이해하고
+                <br/>
+                서비스 특성에 맞는 검색 엔진을 설계하는 경험을 얻었습니다.
+            </p>
+            <a href="https://tall-ranunculus-390.notion.site/16-Elasticsearch-151129e3d5b4804d9801de880dfa9637" target="_blank" class="link" style="font-weight: 700; width:auto;margin-bottom: 15px;">NOTE : 검색 성능 향상 위한 엘라스틱서치 도입 계기 및 테스트</a>
+
+            <p class="sub_title" style="margin-bottom: 15px;">2. JWT 방식 인증 적용</p>
+            <p class="content" style="margin-bottom: 15px;">
+                초기에는 세션 기반 인증을 도입했으나 사용자가 증가할 수록 발생할
+                <br/>
+                서버의 부담과 확장성으로 인해 JWT 기반 인증으로 전환했습니다.
+            </p>
+            <p class="content" style="margin-bottom: 15px;">
+                JWT 기반 인증을 통해 세션리스(stateless) 구조를 구현함으로써 서버의 부하를 줄이고 확장성을 확보할 수 있었습니다.
+                <br/>
+                사용자는 인증 시 accessToken과 refreshToken을 발급 받게 되며
+            </p>
+            <p class="content" style="margin-bottom: 15px;">
+                Access Token의 탈취 위험을 대비하여 아래의 방식으로 Access Token을 보호합니다.
+            </p>
+            <ul style="margin-left: 20px; margin-bottom: 15px;">
+                <li>
+                    Access Token의 만료 시간을 짧게 설정
+                </li>
+                <li>
+                    Refresh Token을 통해 Access Token을 갱신
+                </li>
+                <li>
+                    Access Token을 저장할 때, 쿠키를 Secure와 HttpOnly 옵션으로 설정해 스크립트를 통한 탈취(XSS 공격)를 방지
+                </li>
+            </ul>
+
+            <p class="sub_title" style="margin-bottom: 15px;">3. 보안 강화</p>
+            <p class="content" style="margin-bottom: 15px;">
+                보안 위협 방지를 위해 원격 서버에 다음과 같은 보안 작업을 수행했습니다.
             </p>
             <ul style="margin-left: 20px;">
                 <li>

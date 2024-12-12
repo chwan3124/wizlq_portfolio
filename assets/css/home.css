@@ -20,6 +20,7 @@ body {
 body .container {
   max-width: 1040px;
   margin: 0 auto;
+  padding: 10px;
 }
 body .container .logo {
   height: 100px;
@@ -59,7 +60,7 @@ body .container .section .content {
 body .container .section .link {
   background-color: #efefef;
   padding: 16px;
-  width: 475px;
+  width: auto;
   display: block;
 }
 body .container .section .section p {
