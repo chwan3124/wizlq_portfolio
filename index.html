@@ -30,7 +30,7 @@
                         사용자들은 퀴즈에 답변을 작성하며 <br/>서로의 생각을 공유하고 새로운 지식을 쌓을 수 있습니다.
                     </li>
                     <li>
-                        원하는 퀴즈를 일일 퀴즈로 등록하면 <br/>매일 학습하고 기록을 남길 수 있는 일일 퀴즈 기능도 제공합니다.
+                        관심있는 퀴즈를 일일 퀴즈로 등록하면 <br/>매일 학습하고 기록을 남길 수 있는 일일 퀴즈 기능도 제공합니다.
                     </li>
                 </ul>
                 <p class="title">URL</p>
@@ -67,19 +67,13 @@
                 <p class="title">개발 계기</p>
                 <ul style="margin-left: 20px;">
                     <li>
-                        어떤 직종에 종사하거나 시험 준비 과정에서
-                        <br/>
-                        용어를 학습할 필요성을 느낄 때가 많습니다.
+                        어떤 직종에 종사하거나 시험 준비 과정에서 용어를 학습할 필요성을 느낄 때가 많습니다.
                     </li>
                     <li>
-                        다만 용어의 정의는 사람마다 다르게 생각될 수 있고,
-                        <br/>
-                        관점에 따라 용어의 뜻이 달라질 수 있습니다.
+                        다만 용어의 정의는 사람마다 다르게 생각될 수 있고, 관점에 따라 용어의 뜻이 달라질 수 있습니다.
                     </li>
                     <li>
-                        이러한 관점과 생각에 따른 용어의 다양한 정의를 한곳에 모으고
-                        <br/>
-                        단순 암기를 넘어 깊이 있는 학습을 돕고자 WIZLQ를 개발하게 되었습니다.
+                        이러한 관점과 생각에 따른 용어의 다양한 정의를 한곳에 모으고 단순 암기를 넘어 깊이 있는 학습을 돕고자 WIZLQ를 개발하게 되었습니다.
                     </li>
                 </ul>
             </div>
@@ -88,6 +82,46 @@
         <div class="section">
             <p class="title" style="margin-bottom: 15px;">Service Architecture</p>
             <img src="assets/img/wizlq_architecture.png"/>
+        </div>
+
+        <div class="section">
+            <p class="title" style="margin-bottom: 15px;">DB ERD</p>
+            <img src="assets/img/erd.png"/>
+            <p class="sub_title" style="margin-bottom: 15px;">설명</p>
+            <p class="content">모든 테이블에 기본키를 설정하여 각 레코드의 고유성 보장</p>
+            <p class="content">각 외래키는 연관 테이블의 기본키를 참조하도록 설정하여 데이터 무결성을 유지</p>
+            <p class="content">현재 소규모 서비스인 점을 고려하여 데이터의 범위 제한(smallint, tinyint 등)을 통해 메모리 사용 최적화</p>
+            <p class="content">모든 컬럼에 Not Null 제약 조건을 설정하고 기본값을 지정하여 기능 상 데이터 결함 방지하도록 설계</p>
+            <ul style="margin-left: 20px;">
+                <li>
+                    <b>member</b>와 <b>quiz</b>
+                    <br/>
+                    각 회원은 여러 개의 퀴즈를 생성할 수 있음(1:N)
+                </li>
+                <li>
+                    <b>member</b>와 <b>daily_quiz</b>
+                    <br/>
+                    각 회원은 여러 개의 일일 퀴즈를 생성할 수 있음(1:N)
+                </li>
+                <li>
+                    <b>category</b>와 <b>quiz</b>
+                    <br/>
+                    하나의 카테고리는 여러 개의 퀴즈가 속할 수 있음(1:N)
+                </li>
+                <li>
+                    <b>quiz</b>와 <b>quiz_answer_history</b>, <b>quiz_liked_history</b>, <b>quiz_interested_history</b>
+                    <br/>
+                    각 퀴즈에는 여러 사용자의 답변, 좋아요, 즐겨찾기 이력이 기록됨(1:N)
+                </li>
+                <li>
+                    <b>daily_quiz</b>와 <b>daily_quiz_action_history</b>
+                    <br/>
+                    각 일일 퀴즈에는 여러 일일 퀴즈 수행 이력이 기록됨(1:N)
+                </li>
+            </ul>
+            <a href="https://tall-ranunculus-390.notion.site/WIZLQ-DB-15b129e3d5b4806bb2f8dd76b7c4e0a6" target="_blank" class="link" style="font-weight: 700; width:auto;margin-bottom: 15px;">
+                NOTE : WIZLQ DB 네이밍 컨벤션
+            </a>
         </div>
 
         <div class="section">
