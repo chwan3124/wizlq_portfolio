@@ -58,6 +58,7 @@
                     <p class="skill nginx">Nginx</p>
                     <p class="skill githubactions">Github Actions</p>
                     <p class="skill scouter">Scouter</p>
+                    <p class="skill elasticsearch">Elasticsearch</p>
                 </div>
             </div>
         </div>
@@ -65,23 +66,80 @@
         <div class="section" style="line-height: 1.5">
             <div class="">
                 <p class="title">개발 계기</p>
-                <ul style="margin-left: 20px;">
-                    <li>
-                        어떤 직종에 종사하거나 시험 준비 과정에서 용어를 학습할 필요성을 느낄 때가 많습니다.
-                    </li>
-                    <li>
-                        다만 용어의 정의는 사람마다 다르게 생각될 수 있고, 관점에 따라 용어의 뜻이 달라질 수 있습니다.
-                    </li>
-                    <li>
-                        이러한 관점과 생각에 따른 용어의 다양한 정의를 한곳에 모으고 단순 암기를 넘어 깊이 있는 학습을 돕고자 WIZLQ를 개발하게 되었습니다.
-                    </li>
-                </ul>
+                <p class="content">어떤 직종에 종사하거나 시험 준비 과정에서 용어를 학습할 필요성을 느낄 때가 많습니다.</p>
+                <p class="content">다만 용어의 정의는 사람마다 다르게 생각될 수 있고, 관점에 따라 용어의 뜻이 달라질 수 있습니다.</p>
+                <p class="content">이러한 관점과 생각에 따른 용어의 다양한 정의를 한곳에 모으고</p>
+                <p class="content">단순 암기를 넘어 깊이 있는 학습을 돕고자 WIZLQ를 개발하게 되었습니다.</p>
             </div>
         </div>
 
         <div class="section">
             <p class="title" style="margin-bottom: 15px;">Service Architecture</p>
-            <img src="assets/img/wizlq_architecture.png"/>
+            <p class="content" style="margin-bottom: 15px;">
+                WIZLQ는 Oracle Cloud의 VM을 기반으로
+                <br/>
+                서비스 구축에 필요한 서비스들은 Docker를 활용해 배포 및 관리되며
+                <br/>
+                Scouter를 연동하여 서비스 모니터링과 Github Actions를 통해 CI/CD 환경을 구축하였습니다.
+            </p>
+            <img src="assets/img/wizlq_architecture_v2.png"/>
+            <p class="sub_title" style="margin-bottom: 15px;">설명</p>
+            <p class="content">
+                <b>1. 웹 클라이언트 요청</b>
+            </p>
+            <ul style="margin-left: 20px;">
+                <li>
+                    사용자가 애플리케이션에 접근 시 리버스 프록시인 <b>Nginx</b>가 클라이언트 요청을 <b>WAS</b>로 전달
+                    <br/>
+                    <b>Nginx</b>는 HTTP → HTTPS 변환과 50X 에러에 대한 커스텀 페이지 응답 처리
+                    <br/>
+                    HTTPS 처리를 위해 <b>Certbot</b>으로 <b>Let's Encrypt</b> 인증서를 발급받아 사용
+                </li>
+                <li>
+                    <b>WAS</b>는 <b>MySQL</b>과 연동해 데이터를 처리
+                    <br/>
+                    <b>Elasticsearch</b>는 퀴즈 검색의 성능 최적화를 지원
+                </li>
+            </ul>
+            <p class="content">
+                <b>2. CI/CD 파이프라인</b>
+            </p>
+            <ul style="margin-left: 20px;">
+                <li>
+                    1. GitHub에서 최신 코드를 가져옴
+                </li>
+                <li>
+                    2. Spring Boot 내 보안이 필요한 설정 정보를 GitHub Secrets로부터 가져옴
+                </li>
+                <li>
+                    3. Vue.js 빌드를 위해 Node.js 설치 후 npm을 통해 필요한 라이브러리들을 설치
+                </li>
+                <li>
+                    4. Vue.js의 빌드 결과를 Spring Boot 정적 리소스 폴더로 복사 후 Spring Boot 애플리케이션을 빌드하여 War 파일을 생성
+                </li>
+                <li>
+                    5. 빌드된 War파일을 기반으로 Docker 이미지를 생성
+                </li>
+                <li>
+                    6. 생성된 이미지를 Docker Hub에 반영
+                </li>
+                <li>
+                    7. VM에 접근하여 WAS 컨테이너를 변경된 WAS 이미지로 재실행
+                </li>
+            </ul>
+            <p class="content">
+                <b>3. 모니터링</b>
+            </p>
+            <ul style="margin-left: 20px;">
+                <li>
+                    Scouter Client(APM Software)가 Scouter Collector에 접근 시
+                    <br/>
+                    Host Agent가 수집한 VM의 리소스와
+                    <br/>
+                    WAS의 Java Agent가 수집한 리소스 및 요청 데이터를 시각화된 데이터로 확인
+                </li>
+            </ul>
+
         </div>
 
         <div class="section">

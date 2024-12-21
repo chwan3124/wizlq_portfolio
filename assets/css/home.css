@@ -137,6 +137,9 @@ body .container .section.flex .r_area {
 .skills_area .skill.scouter {
   background-color: #5530c1;
 }
+.skills_area .skill.elasticsearch {
+  background-color: #F05537;
+}
 
 .develop_cause {
   background-color: #f3f3f3;
