@@ -50,11 +50,13 @@ body .container .section .title {
   font-weight: 700;
   margin: 5px 0;
 }
+body .container .section .title.bg {
+  background-color: #e6f1ff;
+}
 body .container .section .sub_title {
   font-size: 20px;
   font-weight: 700;
   margin: 5px 0;
-  background-color: #e6f1ff;
 }
 body .container .section .sub_title.red {
   background-color: #ff9abe;
