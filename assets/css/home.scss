@@ -8,6 +8,12 @@ ul{
   }
 }
 
+.list_margin{
+  li{
+    margin: 10px 0;
+  }
+}
+
 p{
   margin: 0;
 }
@@ -56,6 +62,10 @@ body {
         font-weight: 700;
         margin: 5px 0;
         background-color: #e6f1ff;
+      }
+
+      .sub_title.red{
+        background-color: #ff9abe;
       }
 
       .content{

@@ -85,7 +85,7 @@
         </div>
 
         <div class="section">
-            <p class="title" style="margin-bottom: 15px;">DB ERD</p>
+            <p class="title" style="margin-bottom: 15px;">DB Entity Relational Diagram</p>
             <img src="assets/img/erd.png"/>
             <p class="sub_title" style="margin-bottom: 15px;">설명</p>
             <p class="content">모든 테이블에 기본키를 설정하여 각 레코드의 고유성 보장</p>
@@ -122,6 +122,96 @@
             <a href="https://tall-ranunculus-390.notion.site/WIZLQ-DB-15b129e3d5b4806bb2f8dd76b7c4e0a6" target="_blank" class="link" style="font-weight: 700; width:auto;margin-bottom: 15px;">
                 NOTE : WIZLQ DB 네이밍 컨벤션
             </a>
+        </div>
+        <div class="section">
+            <p class="title" style="margin-bottom: 15px;">인증 방식</p>
+            <p class="content">
+                WIZLQ는 JWT 인증 방식을 사용합니다.
+                <br/>
+                아래 두 시퀀스 다이어그램은 로그인 시 인증 처리 과정과
+                <br/>
+                인증이 필요한 REST API 요청 시 JWT FILTER의 동작 과정을 나타냅니다.
+            </p>
+        </div>
+        <div class="section">
+            <p class="sub_title red" style="margin-bottom: 15px;">JWT Authentication SEQ Diagram</p>
+            <p class="content" style="margin-bottom: 15px;">
+                이 시퀀스 다이어그램은 카카오 로그인 시
+                <br/>
+                WIZLQ BackEnd가 카카오 REST API와 상호작용하여 사용자 인증 처리되는 과정을 설명합니다.
+            </p>
+            <img src="assets/img/login sequence diagram.png"/>
+            <p class="sub_title" style="margin-bottom: 15px;">설명</p>
+            <ul class="list_margin" style="margin-top: 10px; margin-left: 20px; margin-bottom: 15px;">
+                <li>
+                    1: 클라이언트가 카카오 로그인 성공 시 인가 코드를 받음
+                </li>
+                <li>
+                    2: 인증 처리를 하기 위해 WIZLQ의 Redirect URI로 인가 코드 전달
+                </li>
+                <li>
+                    3: 카카오 REST API를 호출하기 위해 인가 코드와 함께 Access Token을 요청
+                </li>
+                <li>
+                    4: 카카오 Access Token과 함께 카카오 사용자 정보 요청
+                    <br/>
+                    (WIZLQ 이용에 필요한 최소한의 정보인 카카오 계정의 <b>이메일</b>만 이용합니다.)
+                </li>
+                <li>
+                    5: WIZLQ DB에서 카카오 계정의 이메일로 회원 조회
+                </li>
+                <li>
+                    6: <b>(opt)</b> 조회된 회원이 없으면 신규 회원을 저장
+                </li>
+                <li>
+                    7. 인증 정보로 사용될 Access/Refresh Token 생성
+                </li>
+                <li>
+                    8. DB에 회원의 Refresh Token을 갱신
+                </li>
+                <li>
+                    9. 생성된 Access/Refresh 토큰을 클라이언트 쿠키에 저장하며 로그인 성공을 응답
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <p class="sub_title red" style="margin-bottom: 15px;">JWT Filter SEQ Diagram</p>
+            <p class="content" style="margin-bottom: 15px;">
+                이 시퀀스 다이어그램은 WIZLQ REST API 호출 시
+                JWT의 검증 및 토큰 갱신 과정을 설명합니다.
+            </p>
+            <img src="assets/img/jwtfilter.png"/>
+            <p class="sub_title" style="margin-bottom: 15px;">설명</p>
+            <ul class="list_margin" style="margin-top: 10px; margin-left: 20px; margin-bottom: 15px;">
+                <li>
+                    1: 클라이언트가 WIZLQ REST API를 호출
+                </li>
+                <li>
+                    2: JWT Filter는 사용자의 쿠키에서 Access Token을 가져와 유효성 검증 후 결과를 반환
+                </li>
+                <li>
+                    3: <b>(opt)</b> Access Token이 만료된 경우 사용자의 쿠키에서 Refresh Token의 유효성 검증 후 결과를 반환
+                    <br/>
+                    <b>Refresh Token 만료:</b> 인증 예외를 발생시켜 요청을 차단하여 클라이언트에게 재로그인을 유도합니다.
+                    <br/>
+                    <b>Refresh Token 유효:</b> 새로운 Access Token을 생성하고 반환 후 사용자의 쿠키에 새로운 Access Token을 저장합니다.
+                </li>
+                <li>
+                    4: Access Token에서 로그인 ID 추출
+                </li>
+                <li>
+                    5: UserDetailsService를 호출하여 DB에서 로그인 ID로 회원 조회
+                </li>
+                <li>
+                    6: SecurityContextHolder를 통해 인증 정보를 설정
+                    <br/>
+                    이를 통해 해당 요청은 인증된 상태로 처리됩니다.
+                </li>
+                <li>
+                    7. 인증된 요청은 REST API로 전달되어 처리되고 결과를 클라이언트에 반환
+                </li>
+            </ul>
         </div>
 
         <div class="section">
