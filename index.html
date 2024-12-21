@@ -65,11 +65,16 @@
 
         <div class="section" style="line-height: 1.5">
             <div class="">
-                <p class="title bg">개발 계기</p>
-                <p class="content">어떤 직종에 종사하거나 시험 준비 과정에서 용어를 학습할 필요성을 느낄 때가 많습니다.</p>
-                <p class="content">다만 용어의 정의는 사람마다 다르게 생각될 수 있고, 관점에 따라 용어의 뜻이 달라질 수 있습니다.</p>
-                <p class="content">이러한 관점과 생각에 따른 용어의 다양한 정의를 한곳에 모으고</p>
-                <p class="content">단순 암기를 넘어 깊이 있는 학습을 돕고자 WIZLQ를 개발하게 되었습니다.</p>
+                <p class="title bg" style="margin-bottom: 15px;">개발 계기</p>
+                <p class="content">
+                    어떤 직종에 종사하거나 시험 준비 과정에서 용어를 학습할 필요성을 느낄 때가 많습니다.
+                    <br/>
+                    다만 용어의 정의는 사람마다 다르게 생각될 수 있고, 관점에 따라 용어의 뜻이 달라질 수 있습니다.
+                    <br/>
+                    이러한 관점과 생각에 따른 용어의 다양한 정의를 한곳에 모으고
+                    <br/>
+                    단순 암기를 넘어 깊이 있는 학습을 돕고자 WIZLQ를 개발하게 되었습니다.
+                </p>
             </div>
         </div>
 
@@ -143,7 +148,7 @@
         </div>
 
         <div class="section">
-            <p class="title bg" style="margin-bottom: 15px;">DB Entity Relational Diagram</p>
+            <p class="title bg" style="margin-bottom: 15px;">DB Entity Relationship Diagram</p>
             <p class="content" style="margin-bottom: 15px;">
                 모든 테이블에 기본키를 설정하여 각 레코드의 고유성 보장
                 <br/>
@@ -222,7 +227,7 @@
                     5: WIZLQ DB에서 카카오 계정의 이메일로 회원 조회
                 </li>
                 <li>
-                    6: <b>(opt)</b> 조회된 회원이 없으면 신규 회원을 저장
+                    <b>(Optional)</b> 6: 조회된 회원이 없으면 신규 회원을 저장
                 </li>
                 <li>
                     7. 인증 정보로 사용될 Access/Refresh Token 생성
@@ -252,7 +257,7 @@
                     2: JWT Filter는 사용자의 쿠키에서 Access Token을 가져와 유효성 검증 후 결과를 반환
                 </li>
                 <li>
-                    3: <b>(opt)</b> Access Token이 만료된 경우 사용자의 쿠키에서 Refresh Token의 유효성 검증 후 결과를 반환
+                    <b>(Optional)</b> 3: Access Token이 만료된 경우 사용자의 쿠키에서 Refresh Token의 유효성 검증 후 결과를 반환
                     <br/>
                     <b>Refresh Token 만료:</b> 인증 예외를 발생시켜 요청을 차단하여 클라이언트에게 재로그인을 유도합니다.
                     <br/>
@@ -356,6 +361,39 @@
                     MySQL 접속을 특정 IP로 제한하여 데이터베이스 보안 강화
                 </li>
             </ul>
+        </div>
+
+        <div class="section">
+            <p class="title bg" style="margin-bottom: 15px;">트러블 슈팅</p>
+            <p class="content">
+                <b style="font-size: 20px">(1) 이슈 내용: 세션 인증 상태 관리</b>
+                <br/>
+                사용자가 로그인 후 인증 상태를 유지하기 위해 서버의 세션에 저장하여 관리하도록 했으나
+                <br/>
+                서버가 재시작될 때마다 세션 데이터가 손실되어 재로그인이 필요해지는 문제가 발생했습니다.
+            </p>
+            <p class="content">
+                <b>해결 방법: JWT 인증 방식 전환</b>
+                <br/>
+                서버가 클라이언트의 상태를 관리하는 구조는 서버와 클라이언트 간 결합도가 높다는 문제점이 있었기 때문에
+                <br/>
+                서버와 클라이언트가 독립적으로 동작할 수 있는 방법이 필요했습니다.
+                <br/>
+                구글링을 통해 JWT 인증 방식이 인증 정보를 클라이언트에 저장하고,
+                <br/>
+                서버는 이를 검증하는 구조임을 알게 되어 이 방식을 도입했습니다.
+            </p>
+            <p class="content">
+                <b>결과</b>
+                <br/>
+                JWT 인증 방식 도입 후, 로그인 시 서버는 클라이언트에게 Access Token과 Refresh Token을 쿠키로 전달합니다.
+                <br/>
+                이후 클라이언트는 이 토큰들을 서버에 요청 시 함께 전달하며, 서버는 토큰을 검증하는 방식으로 동작합니다.
+                <br/>
+                이렇게 서버와 클라이언트가 각자의 역할을 독립적으로 수행함으로써
+                <br/>
+                서버 재시작 시 재로그인해야 하는 문제를 해결했으며, 각 영역의 확장성도 향상되었습니다.
+            </p>
         </div>
 
         <div class="section">
