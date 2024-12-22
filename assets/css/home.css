@@ -1,3 +1,19 @@
+@media (max-width: 1075px) {
+  .section.flex.res {
+    flex-direction: column;
+  }
+  .section.flex.res .l_area {
+    width: 100% !important;
+    padding: 0 !important;
+    display: flex;
+  }
+  .section.flex.res .l_area img {
+    width: 50% !important;
+  }
+  .section.flex.res .r_area {
+    width: 100% !important;
+  }
+}
 ul {
   margin: 0;
   padding: 0;

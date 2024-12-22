@@ -1,3 +1,21 @@
+@media (max-width: 1075px) {
+  .section.flex.res{
+    flex-direction: column;
+    .l_area{
+      width: 100% !important;
+      padding: 0 !important;
+      display: flex;
+
+      img{
+        width: 50% !important;
+      }
+    }
+    .r_area{
+      width: 100% !important;
+    }
+  }
+}
+
 ul{
   margin: 0;
   padding: 0;
