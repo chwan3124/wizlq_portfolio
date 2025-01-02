@@ -147,7 +147,7 @@
             <div class="develop_cause">
                 <b>개선 계획</b>
                 <p>
-                    <b>1) WAS의 Front와 BackEnd 두개의 프로젝트로 분리 및 배포</b>
+                    <b>1) WAS의 Front와 BackEnd 두 개의 프로젝트로 분리 및 배포</b>
                     <br/>
                     현재 스프링 부트에서 Vue.js의 정적 파일을 static 폴더에 옮겨 배포하고 있음
                     <br/>
@@ -327,7 +327,7 @@
                 <p>
                     <b>1) 최초 로그인 시 클라이언트 IP를 DB에 저장 후 이후 API 요청 시 IP 일치 검증방식 추가</b>
                     <br/>
-                    악의적인 사용자가 다른 사용자의 Access Token을 탈취하여 접근을 시도했을때를 방지하기 위해
+                    악의적인 사용자가 다른 사용자의 Access Token을 탈취하여 접근을 시도 했을 때를 방지하기 위해
                     <br/>
                     최초 로그인 시 클라이언트 IP를 DB에 저장하여 이후 요청이 DB에 저장된 IP와 동일한 클라이언트 IP인지 검증하는 방식을 추가할 예정
                 </p>
@@ -358,14 +358,14 @@
 
             <p class="sub_title" style="margin-bottom: 15px;">2. JWT 인증 방식 적용</p>
             <p class="content" style="margin-bottom: 15px;">
-                초기에는 세션 기반 인증을 도입했으나 사용자가 증가할 수록 발생할
+                초기에는 세션 기반 인증을 도입했으나 사용자가 증가할수록 발생할
                 <br/>
                 서버의 부담과 확장성으로 인해 JWT 기반 인증으로 전환했습니다.
             </p>
             <p class="content" style="margin-bottom: 15px;">
-                JWT 기반 인증을 통해 세션리스(stateless) 구조를 구현함으로써 서버의 부하를 줄이고 확장성을 확보할 수 있었습니다.
+                JWT 기반 인증을 통해 무상태성(stateless) 구조를 구현함으로써 서버의 부하를 줄이고 확장성을 확보할 수 있었습니다.
                 <br/>
-                사용자는 인증 시 accessToken과 refreshToken을 발급 받게 되며
+                사용자는 인증 시 Access Token과 Refresh Token을 발급 받게 되며
             </p>
             <p class="content" style="margin-bottom: 15px;">
                 Access Token의 탈취 위험을 대비하여 아래의 방식으로 Access Token을 보호합니다.
@@ -450,7 +450,7 @@
             <p>
                 처음엔 저를 대상으로 이 서비스를 개발하게 되었습니다.
                 <br/>
-                개념 학습의 필요성과 기술적으로도 아쉬운 부분이 있었기에 이 서비스를 개발하면서 제 단점을 보완해보고자 시작하게 되었습니다.
+                개념 학습의 필요성과 기술적으로도 아쉬운 부분이 있었기에 이 서비스를 개발하면서 제 단점을 보완해 보고자 시작하게 되었습니다.
                 <br/>
                 <br/>
                 힘든 점도 많았지만 실무에서 경험해보지 못했던

@@ -227,6 +227,9 @@ body .container .section.flex .contact_area .contact_title {
 .skills_area .skill.confluence {
   background-color: #172B4D;
 }
+.skills_area .skill.elasticsearch {
+  background-color: #F05537;
+}
 
 .develop_cause {
   background-color: #f3f3f3;
