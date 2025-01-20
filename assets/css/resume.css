@@ -131,6 +131,22 @@ p {
   border-bottom: 1px solid #d7d7d7;
 }
 
+@page {
+  size: A4;
+  margin: 0;
+}
+@media print {
+  .page {
+    margin: 0;
+    border: initial;
+    border-radius: initial;
+    width: initial;
+    min-height: initial;
+    box-shadow: initial;
+    background: initial;
+    page-break-after: always;
+  }
+}
 body {
   font-family: Pretendard, sans-serif;
   line-height: 1.6;
