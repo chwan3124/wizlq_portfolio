@@ -3,7 +3,6 @@ ul {
   padding: 0;
 }
 ul li {
-  margin: 5px 0;
   font-weight: 500;
 }
 
@@ -12,70 +11,44 @@ p {
 }
 
 .large_title {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
 }
 
 .area_title {
-  font-size: 23px;
+  font-size: 14px;
   font-weight: 800;
   color: #705fff;
 }
 
 .project {
-  font-size: 17px;
-  font-weight: bold;
-}
-
-.project_description {
-  font-size: 16px;
-}
-
-.main_project_description {
-  font-size: 16px;
-}
-
-.project_label {
-  background-color: #cfd9ff;
-  margin: 15px 0 5px 0;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: bold;
 }
 
 .project_label {
   background-color: #cfd9ff;
-  margin: 15px 0 5px 0;
-  font-size: 16px;
+  margin: 5px 0 5px 0;
+  font-size: 14px;
   font-weight: bold;
+}
+
+.experience_area {
+  margin-top: 5px;
 }
 
 .area_sub_title {
-  font-size: 15px;
   color: #42B883;
-  font-weight: 600;
-}
-
-.area_sub_title_v2 {
-  margin-left: 50px;
-  font-size: 18px;
-  color: black;
   font-weight: 600;
 }
 
 .large_sub_title {
   color: #5d5d5d;
   font-weight: 600;
-  font-size: 15px;
-}
-
-.title {
-  font-size: 30px;
-  font-weight: 700;
-  margin: 5px 0;
 }
 
 .exp_title {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
   background-color: #ffd9d9;
 }
@@ -86,34 +59,33 @@ p {
 }
 
 .exp_content_list_title {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 600;
-  margin-top: 10px;
+  margin-top: 3px;
 }
 
 .exp_content_list {
   margin-left: 20px;
 }
 .exp_content_list .exp_content {
-  font-size: 16px;
   font-weight: 400;
 }
 .exp_content_list .exp_content.bold {
   font-weight: 700;
-  margin: 5px 0;
 }
 .exp_content_list .exp_content.list {
   list-style: none;
 }
 
-.section.portfolio .link {
+.link {
   background-color: #efefef;
-  padding: 10px;
+  padding: 5px 10px;
   width: 633px;
   display: block;
   font-weight: 600;
 }
-.section.portfolio .portfolio_img_area .img {
+
+.portfolio_img_area .img {
   background-image: url("/wizlq_portfolio//assets/img/wizlq_logo.png");
   background-size: 148px;
   background-position: center;
@@ -152,6 +124,7 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  font-size: 12px;
 }
 body * {
   box-sizing: border-box;
@@ -159,9 +132,8 @@ body * {
 }
 body .page {
   width: 21cm;
-  max-height: 29.7cm;
+  height: 29.7cm;
   padding: 0.5cm;
-  margin: 1cm auto;
   border: 1px #D3D3D3 solid;
   border-radius: 5px;
   background: white;
@@ -172,19 +144,25 @@ body .container {
   margin: 0 auto;
 }
 body .container .section {
-  margin: 1rem 0;
+  margin: 0.8rem 0;
 }
 body .container .section.flex {
   display: flex;
   flex-direction: column;
 }
-body .container .section.flex .l_area {
+
+.content {
+  height: 1075px;
+}
+
+.l_area {
   width: 172px;
 }
-body .container .section.flex .profile {
+
+.profile {
   background-image: url("/wizlq_portfolio/assets/img/profile.png");
   background-size: 174px;
-  background-position: -1px -10px;
+  background-position: center;
   width: 172px;
   height: 170px;
   border-radius: 170px;
@@ -192,24 +170,24 @@ body .container .section.flex .profile {
   /* border: 1px solid gray; */
   box-shadow: 0px -1px 20px 1px #cdcdcd;
   margin: auto;
-  margin-left: 15px;
 }
-body .container .section.flex .r_area {
+
+.r_area {
   padding: 0 10px 0 0;
   margin-right: auto;
   width: 800px;
 }
-body .container .section.flex .r_area .introduce {
-  font-size: 15.5px;
+.r_area .introduce {
   margin: 10px 0;
 }
-body .container .section.flex .contact_area {
+
+.contact_area {
   display: flex;
   flex-direction: column;
   white-space: nowrap;
   margin-top: 10px;
 }
-body .container .section.flex .contact_area .contact_title {
+.contact_area .contact_title {
   font-weight: 700;
 }
 
@@ -218,16 +196,14 @@ body .container .section.flex .contact_area .contact_title {
   gap: 5px;
 }
 .skills_area .skill {
-  padding: 5px 15px;
+  padding: 2px 13px;
   border-radius: 30px;
   color: white;
-  font-size: 13px;
   font-weight: 600;
   margin-bottom: 5px;
   display: inline-block;
 }
 .skills_area .skill_title {
-  font-size: 16px;
   font-weight: 600;
   margin-top: 5px;
 }
