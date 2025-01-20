@@ -12,19 +12,44 @@ p {
 }
 
 .large_title {
-  font-size: 25px;
+  font-size: 18px;
   font-weight: 700;
 }
 
 .area_title {
-  font-size: 25px;
-  font-weight: 700;
+  font-size: 23px;
+  font-weight: 800;
   color: #705fff;
-  margin-left: 50px;
+}
+
+.project {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.project_description {
+  font-size: 16px;
+}
+
+.main_project_description {
+  font-size: 16px;
+}
+
+.project_label {
+  background-color: #cfd9ff;
+  margin: 15px 0 5px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.project_label {
+  background-color: #cfd9ff;
+  margin: 15px 0 5px 0;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .area_sub_title {
-  margin-left: 50px;
   font-size: 15px;
   color: #42B883;
   font-weight: 600;
@@ -61,7 +86,7 @@ p {
 }
 
 .exp_content_list_title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   margin-top: 10px;
 }
@@ -72,7 +97,13 @@ p {
 .exp_content_list .exp_content {
   font-size: 16px;
   font-weight: 400;
-  margin: 0;
+}
+.exp_content_list .exp_content.bold {
+  font-weight: 700;
+  margin: 5px 0;
+}
+.exp_content_list .exp_content.list {
+  list-style: none;
 }
 
 .section.portfolio .link {
@@ -90,6 +121,8 @@ p {
   width: 140px;
   border: 1px solid #d3d3d3;
   height: 100px;
+  position: absolute;
+  right: 432px;
 }
 
 .line {
@@ -109,13 +142,14 @@ body .container {
   margin: 0 auto;
 }
 body .container .section {
-  margin: 2rem 0;
+  margin: 1.5rem 0;
 }
 body .container .section.flex {
   display: flex;
+  flex-direction: column;
 }
 body .container .section.flex .l_area {
-  width: 200px;
+  width: 172px;
 }
 body .container .section.flex .profile {
   background-image: url("/wizlq_portfolio/assets/img/profile.png");
@@ -132,6 +166,7 @@ body .container .section.flex .profile {
 body .container .section.flex .r_area {
   padding: 0 10px 10px 30px;
   margin-right: auto;
+  width: 800px;
 }
 body .container .section.flex .r_area .introduce {
   font-size: 15.5px;
