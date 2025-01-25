@@ -207,6 +207,9 @@ body .container .section.flex {
 .skills_area .skill.nextjs {
   background-color: #000000;
 }
+.skills_area .skill.typescript {
+  background-color: #3178C6;
+}
 .skills_area .skill.tailwind {
   background-color: #06B6D4;
 }
