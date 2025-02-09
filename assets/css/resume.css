@@ -276,6 +276,9 @@ body .container .section.flex {
 .skills_area .skill.logstash {
   background-color: #E14D3A;
 }
+.skills_area .skill.querydsl {
+  background-color: #E14D3A;
+}
 
 .develop_cause {
   background-color: #f3f3f3;
