@@ -28,7 +28,7 @@ p {
 
 .project_label {
   background-color: #cfd9ff;
-  margin: 5px 0 5px 0;
+  margin: 8px 0 5px 0;
   font-size: 14px;
   font-weight: bold;
 }
@@ -193,12 +193,13 @@ body .container .section.flex {
   gap: 5px;
 }
 .skills_area .skill {
-  padding: 2px 13px;
+  padding: 0 11px;
   border-radius: 30px;
   color: white;
   font-weight: 600;
   margin-bottom: 5px;
   display: inline-block;
+  font-size: 11px;
 }
 .skills_area .skill_title {
   font-weight: 600;
@@ -281,6 +282,12 @@ body .container .section.flex {
 }
 .skills_area .skill.redis {
   background-color: #D92D2A;
+}
+.skills_area .skill.aws {
+  background-color: #FF9900;
+}
+.skills_area .skill.nexacro {
+  background-color: #3a387b;
 }
 
 .develop_cause {
