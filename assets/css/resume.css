@@ -279,6 +279,9 @@ body .container .section.flex {
 .skills_area .skill.querydsl {
   background-color: #E14D3A;
 }
+.skills_area .skill.redis {
+  background-color: #D92D2A;
+}
 
 .develop_cause {
   background-color: #f3f3f3;
